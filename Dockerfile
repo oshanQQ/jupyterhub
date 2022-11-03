@@ -24,6 +24,9 @@ RUN pip install --no-cache-dir numpy pandas scipy opencv-python matplotlib Pillo
 # jupyterlabの拡張関係をインストールする
 RUN pip install --no-cache-dir jupyterhub jupyterlab_code_formatter jupyterlab-git lckr-jupyterlab-variableinspector jupyterlab_widgets ipywidgets import-ipynb jupyterlab-language-pack-ja-JP
 
+# enterprise-gatewayへのurl
+ENV JUPYTER_GATEWAY_URL=http://192.168.102.23:8887
+
 # jupyterhubの起動時設定 dockerspawnerを使うときは原則これ
 CMD ["jupyterhub-singleuser", "--allow-root"]
 
